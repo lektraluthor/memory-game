@@ -20,13 +20,9 @@ function flipCard() {
 }
 
 function checkForMatch() {
-    if (firstCard.dataset.name === secondCard.dataset.name) {
-        // It's a match!
-        disableCards();
-    } else {
-        // not a match :(
-        unflipCards();
-    }
+    // Refactoring
+    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+    isMatch ? disableCards() : unflipCards(); 
 }
 
 function disableCards() {
