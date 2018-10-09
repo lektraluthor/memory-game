@@ -48,4 +48,11 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
+(function shuffle() {
+    cards.forEach(card => {
+        let random = Math.floor(Math.random() * 12);
+        card.style.order = random;
+    });
+})();
+
 cards.forEach(card => card.addEventListener('click', flipCard));
